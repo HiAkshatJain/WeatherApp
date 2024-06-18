@@ -12,7 +12,7 @@ This is a simple weather application built using HTML, CSS, and JavaScript, util
 
 - HTML5
 - CSS3
-- JavaScript (ES6+)
+- JavaScript
 - OpenWeather API
 
 ## Getting Started
@@ -20,8 +20,7 @@ This is a simple weather application built using HTML, CSS, and JavaScript, util
 To run this application locally, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/your-username/weather-app.git`
-2. Navigate into the project directory.
-3. Open `index.html` in your browser.
+2. Open `index.html` in your browser.
 
 ## Screenshots
 
