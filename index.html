@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
 
     <!-- Link Font  -->
@@ -24,14 +21,15 @@
     <!-- Wrapper -->
     <div class="wrapper">
       <h1>Weather App</h1>
+      <!-- Tab Container -->
       <div class="tabContainer">
         <p class="tab currentTab" data-userWeather>Your Weather</p>
         <p class="tab" data-searchWeather>Search Weather</p>
       </div>
 
-      <!-- Container -->
+      <!-- Main Container -->
       <div class="container">
-        <!-- Search Container -->
+        <!-- Search Form Container -->
         <form class="formContainer" data-searchForm>
           <input
             type="text"
@@ -40,7 +38,7 @@
           />
           <button class="btn" type="submit">
             <img
-              src="./Images/search.png"
+              src="./assets/search.png"
               width="20"
               height="20"
               loading="lazy"
@@ -48,10 +46,10 @@
           </button>
         </form>
 
-        <!-- Grant Location Access  -->
+        <!-- Grant Location Access Container -->
         <div class="grantLocationContainer subContainer">
           <img
-            src="./Images/location.png"
+            src="./assets/location.png"
             width="80"
             height="80"
             loading="lazy"
@@ -61,12 +59,13 @@
           <button class="btn" data-grantAccess>Grant Access</button>
         </div>
 
+        <!-- Loading Container -->
         <div class="subContainer loadingContainer">
-          <img src="./Images/loading.gif" width="150" height="150" />
+          <img src="./assets/loading.gif" width="150" height="150" />
           <p>Loading</p>
         </div>
 
-        <!-- Weather Info -->
+        <!-- Weather Information Container -->
         <div class="userInfoContainer subContainer">
           <div class="name">
             <p data-cityName></p>
@@ -78,33 +77,34 @@
 
           <p data-temp></p>
 
+          <!-- Weather Parameters Container -->
           <div class="parameterContainer">
             <!-- Wind Speed -->
             <div class="parameter">
-              <img src="Images/wind.png" alt="#" />
+              <img src="assets/wind.png" alt="#" />
               <p>windspeed</p>
               <p class="parameterValue" data-windspeed></p>
             </div>
 
             <!-- Humidity -->
             <div class="parameter">
-              <img src="Images/humidity.png" alt="#" />
+              <img src="assets/humidity.png" alt="#" />
               <p>humidity</p>
               <p class="parameterValue" data-humidity></p>
             </div>
 
-            <!-- Wind Speed -->
+            <!-- Clouds -->
             <div class="parameter">
-              <img src="Images/cloud.png" alt="#" />
+              <img src="assets/cloud.png" alt="#" />
               <p>clouds</p>
               <p class="parameterValue" data-clouds></p>
             </div>
           </div>
         </div>
 
-        <!-- Location Not Found -->
+        <!-- Location Not Found Container -->
         <div class="errorContainer subContainer">
-          <img src="./Images/not-found.png" data-errorImg />
+          <img src="./assets/not-found.png" data-errorImg />
           <p data-errorText></p>
           <button class="btn" data-errorButton>Retry Now</button>
         </div>

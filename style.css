@@ -10,8 +10,8 @@
 
 /* Define color variables */
 :root {
-  --colorDark1: #112d4e; /* Dark blue */
-  --colorDark2: #3f72af; /* Light blue */
+  --colorDark1: #094955; /* Dark green */
+  --colorDark2: #6fa7e7; /* Light blue */
   --colorLight1: #dbe2ef; /* Light gray-blue */
   --colorLight2: #f9f7f7; /* Light gray */
 }
@@ -25,8 +25,8 @@
   background-color: #112d4e; /* Dark blue fallback */
   background-image: linear-gradient(
     160deg,
-    #112d4e 0%,
-    #3f72af 100%
+    #094955 0%,
+    #6fa7e7 100%
   ); /* Gradient from dark to light blue */
 }
 
