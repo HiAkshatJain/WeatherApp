@@ -10,8 +10,8 @@ This is a simple weather application built using HTML, CSS, and JavaScript, util
 
 ## Technologies Used
 
-- HTML5
-- CSS3
+- HTML
+- CSS
 - JavaScript
 - OpenWeather API
 
@@ -24,12 +24,12 @@ To run this application locally, follow these steps:
 
 ## Screenshots
 
-<img width='100%' src='https://github.com/HiAkshatJain/weatherapp/blob/main/screenshots/page1.png' />
+<img width='100%' src='https://github.com/HiAkshatJain/weatherapp/blob/main/screenshots/page1.PNG' />
 
-<img width='100%' src='https://github.com/HiAkshatJain/weatherapp/blob/main/screenshots/page2.png' />
+<img width='100%' src='https://github.com/HiAkshatJain/weatherapp/blob/main/screenshots/page2.PNG' />
 
-<img width='100%' src='https://github.com/HiAkshatJain/weatherapp/blob/main/screenshots/page3.png' />
+<img width='100%' src='https://github.com/HiAkshatJain/weatherapp/blob/main/screenshots/page3.PNG' />
 
-<img width='100%' src='https://github.com/HiAkshatJain/weatherapp/blob/main/screenshots/page4.png' />
+<img width='100%' src='https://github.com/HiAkshatJain/weatherapp/blob/main/screenshots/page4.PNG' />
 
-<img width='100%' src='https://github.com/HiAkshatJain/weatherapp/blob/main/screenshots/page5.png' />
+<img width='100%' src='https://github.com/HiAkshatJain/weatherapp/blob/main/screenshots/page5.PNG' />
