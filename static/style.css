@@ -1,0 +1,203 @@
+/* Reset and global styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Merriweather Sans", sans-serif;
+}
+
+/* Define color variables */
+:root {
+  --colorDark1: #2a0845; /* Deep purple */
+  --colorDark2: #ff6f61; /* Coral pink */
+  --colorLight1: #ffc3a0; /* Soft peach */
+  --colorLight2: #ffecd2; /* Light cream */
+}
+
+/* Main wrapper styles */
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  color: var(--colorLight2); /* Light cream */
+  background-color: #2a0845; /* Deep purple fallback */
+  background-image: linear-gradient(
+    160deg,
+    #2a0845 0%,
+    #ff6f61 100%
+  ); /* Gradient from deep purple to coral pink */
+}
+
+/* Heading styles */
+h1 {
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  word-spacing: 2px;
+  letter-spacing: 1.75px;
+  margin-block: 2rem;
+}
+
+/* Main content container */
+.container {
+  margin-block: 4rem;
+}
+
+/* Form container */
+.formContainer {
+  width: 90%;
+  max-width: 550px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0 10px;
+  display: flex;
+}
+
+.form-container .btn img {
+  object-fit: contain;
+}
+
+/* Input field styles */
+.formContainer input {
+  all: unset;
+  width: calc(100% - 80px);
+  height: 40px;
+  padding: 0 20px;
+  background-color: rgba(219, 226, 239, 0.5); /* Light gray */
+  border-radius: 10px;
+}
+
+.formContainer input:focus {
+  outline: 3px solid rgba(255, 255, 255, 0.7); /* White outline on focus */
+}
+
+.formContainer input::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* Light gray placeholder text */
+}
+
+/* Circular button styles */
+.formContainer .btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: unset;
+  border-radius: 100%;
+}
+
+.form-container .btn img {
+  object-fit: contain;
+}
+
+/* Sub-container styles */
+.subContainer {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Loading container */
+.loadingContainer {
+  display: none; /* Hidden by default */
+}
+
+.loadingContainer.active {
+  display: flex; /* Displayed when active */
+  padding-left: auto;
+}
+
+.loadingContainer p {
+  text-transform: uppercase;
+}
+
+.userInfoContainer {
+  display: flex; /* Displayed when active */
+}
+
+.userInfoContainer p {
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+/* Parameter container */
+.parameterContainer {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  gap: 10px 20px;
+  margin: 1.6rem auto 0;
+  flex-wrap: wrap;
+}
+
+/* Individual parameter box */
+.parameter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(219, 226, 239, 0.5);
+  padding: 0.8rem;
+  border-radius: 5px;
+  width: 30%;
+  max-width: 200px;
+  gap: 5px 0;
+}
+
+.parameter p {
+  font-size: 1rem;
+  font-size: 600;
+  text-transform: uppercase;
+}
+
+.parameter img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.parameterValue {
+  font-size: 0.8rem;
+  font-weight: 200;
+}
+
+serInfoContainer p[data-temp] {
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+.userInfoContainer p[data-weatherDesc] {
+  text-transform: capitalize;
+  font-size: 1.2rem;
+}
+
+.output {
+  font-weight: bold;
+  font-size: 2.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.errorContainer {
+  display: flex;
+  gap: 1rem 0;
+}
+
+.errorContainer p {
+  text-align: center;
+}
+
+.errorContainer img {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}

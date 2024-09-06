@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weather App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="shortcut icon"
+      href="/static/img/cloud.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <h1>Weather App</h1>
+      <div class="container"></div>
+      <form class="formContainer" method="post" id="submit-form">
+        {% csrf_token %}
+        <input type="text" placeholder="Search for city..." data-searchInput />
+        <button class="btn" type="submit">
+          <img
+            src="/static/img/search.png"
+            width="20"
+            height="20"
+            loading="lazy"
+          />
+        </button>
+      </form>
+
+      <div class="subContainer loadingContainer" id="loading">
+        <img src="/static/img/loading.gif" width="150" height="150" />
+        <p>Loading...</p>
+      </div>
+
+      <div class="weather-info" id="weather"></div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $("#submit-form").submit(function (event) {
+        $("#loading").show();
+        $("#weather").empty();
+        var formData = {
+          csrfmiddlewaretoken: $('input[name="csrfmiddlewaretoken"]').val(),
+          city: $('input[name="input-city"]').val(),
+        };
+        $.ajax({
+          type: "POST",
+          url: "",
+          data: formData,
+          encode: true,
+        }).done(function (data) {
+          var data = JSON.parse(data);
+          $("#weather").empty();
+          $("#loading").hide();
+
+          if (data["status"] == "success") {
+            mystr = `
+            <div class="userInfoContainer subContainer">
+        <p data-cityName></p>
+      </div>    
+      <div class="userInfoContainer subContainer">
+        <div class="name">
+          <div class="output">
+                <p>${data["city"]}</p>
+                <p class="temp">${data["temp"]}&#8451;</p>
+                <p>${data["description"]}</p>
+            </div>
+        </div>
+
+        <!-- Weather Parameters Container -->
+        <div class="parameterContainer">
+          <!-- Wind Speed -->
+          <div class="parameter">
+            <img src="/static/img/wind.png" alt="#" />
+            <p>windspeed</p>
+            <p class="parameterValue">${data["wind"]}km/h</p>
+          </div>
+
+          <!-- Humidity -->
+          <div class="parameter">
+            <img src="/static/img/humidity.png" alt="#" />
+            <p>humidity</p>
+            <p class="parameterValue">${data["temp_F"]}&#8457</p>
+          </div>
+
+          <!-- Clouds -->
+          <div class="parameter">
+            <img src="/static/img/cloud.png" alt="#" />
+            <p>clouds</p>
+            <p class="parameterValue">${data["feels_like"]}</p>
+          </div>
+        </div>
+      </div>
+            `;
+
+            $("#weather").append(mystr);
+          } else if (data["status"] == "notfound") {
+            mystr = `
+                <div class="errorContainer subContainer">
+          <img src="/static/img/not-found.png" data-errorImg />
+          <p data-errorText>Not Found !!!</p>
+        </div>
+            `;
+            $("#weather").append(mystr);
+          } else {
+            mystr = `<p class="errorContainer">Something went wrong!</p>`;
+            $("#weather").append(mystr);
+          }
+        });
+        event.preventDefault();
+      });
+    </script>
+  </body>
+</html>
